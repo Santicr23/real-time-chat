@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat en Tiempo Real - Iniciar Sesión</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-container">  
+    <form id="login-form">
+      <h2>Iniciar Sesión</h2>
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+      <input type="password" id="contrasena" placeholder="Contraseña" required>
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <hr>
+    <br>
+    <br>
+    <h3>¿No tienes una cuenta?</h3>
+    <a href="register.html" class="button-link">Crear una cuenta</a>  
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('content/fondobody.jpg'); /* Cambia esta ruta por la ubicación de tu imagen de fondo */
+  background-size: cover; /* Cubre todo el espacio disponible */
+  background-position: center; /* Centra la imagen en la página */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+
+h2{
+
+
+  color: #fff;
+}
+#chat-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Color de fondo si la imagen no carga */
+  background-image: url('content/vice.jpg'); /* Ajusta la ruta de la imagen */
+  background-size: cover; /* Cubre todo el espacio disponible */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.message {
+  margin-bottom: 15px;
+  clear: both;
+  overflow: hidden;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 100%; /* Ajustar el ancho máximo */
+  word-wrap: break-word; /* Ajustar palabra automáticamente */
+}
+
+.message-content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-content {
+  flex: 1;
+  max-width: 70%;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+.message-timestamp {
+  font-size: 0.8em;
+  color: #999;
+  text-align: right;
+  display: block;
+  margin-left: 10px;
+}
+
+.sent-message {
+  background-color: #dcf8c6;
+  float: right;
+  max-width: 70%; /* Ajustar el ancho máximo */
+}
+
+.received-message {
+  background-color: #ffffff;
+  float: left;
+  max-width: 70%; /* Ajustar el ancho máximo */
+}
+
+#chat-form {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#send-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#send-button img.send-icon {
+  width: 24px; /* Ajusta el tamaño según tus necesidades */
+  height: 24px;
+}
+
+#send-button:hover img.send-icon {
+  filter: brightness(1.2); /* Efecto de hover */
+}
+
+#welcome-message {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: 'Google Sans', sans-serif;
+  font-weight: bold;
+  font-size: 16px; /* Puedes ajustar el tamaño de la fuente según tus necesidades */
+}
+
+#user-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#user-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+#user-list li:hover {
+  background-color: #f1f1f1;
+}
+
+#login-form, #registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+
+
+#login-form input, #registro-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#login-form button, #registro-form button {
+  padding: 10px;
+  border: none;
+  background-color: #20c4ec;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#login-form button:hover, #registro-form button:hover {
+  background-color: #20c4ec;
+}
+
+/* Estilo para las imágenes dentro de los mensajes */
+.chat-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+/* Ajustes de estilos para los mensajes */
+.sent-message, .received-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sent-message {
+  align-items: flex-end;
+}
+
+.message p {
+  margin: 0;
+}
+
+/* Estilo para el nombre del usuario */
+.message .username {
+  font-size: 0.9em; /* Tamaño de fuente más pequeño */
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Estilo para la fecha del mensaje */
+.message .timestamp {
+  font-size: 0.8em; /* Tamaño de fuente más pequeño */
+  color: #999; /* Color gris */
+  margin-top: 2px;
+}
+
+/* Estilo para el icono de subida de archivos */
+.file-upload {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+#file-upload-icon {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#file-upload-icon img.clip-icon {
+  width: 35px; /* Ajusta el tamaño para que sea igual al del botón de enviar */
+  height: 35px;
+  
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px; /* Añadir margen a la derecha para el botón de enviar */
+}
+
+#send-button {
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#send-button img.send-icon {
+  width: 35px; /* Ajusta el tamaño según tus necesidades */
+  height: 35px;
+  
+}
+
+/* Estilo para el contenedor de la lista de usuarios */
+#users-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-container span {
+  margin-left: 10px; /* Añadir margen a la izquierda del nombre */
+  color: white;
+  
+}
+
+.profile-picture {
+  width: 70px; /* Ajustar según el tamaño deseado */
+  height: 70px; /* Ajustar según el tamaño deseado */
+  border-radius: 50%; /* Hacer la imagen circular */
+  object-fit: cover; /* Ajustar la imagen para que se vea bien dentro del contenedor */
+}
+
+#user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Ajusta el margen inferior */
+  padding: 10px; /* Añade padding alrededor del contenido */
+  background-color: rgba(255, 255, 255, 0.8); /* Opcional: fondo con transparencia */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra ligera */
+}
+
+#user-profile-picture {
+  width: 50px; /* Ajusta el tamaño según necesites */
+  height: 50px; /* Ajusta el tamaño según necesites */
+  border-radius: 50%; /* Hacer la imagen circular */
+  object-fit: cover; /* Ajustar la imagen para que se vea bien dentro del contenedor */
+  margin-right: 10px; /* Añadir margen a la derecha de la imagen */
+}
+
+#user-name {
+  font-weight: bold;
+  
+  color: #333; /* Color del texto */
+}
+
+body {
+  font-family: 'Google Sans', Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Asegúrate de que no haya desbordamiento */
+}
+
+.chat-container {
+  display: flex;
+  width: 90%; /* Ajustado para un mejor uso del espacio */
+  height: 90vh; /* Altura adecuada para la visibilidad completa */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Evita desbordamientos internos */
+}
+
+.sidebar {
+  flex: 0 0 30%; /* Uso de flexbox para dimensionamiento */
+  border-right: 2px solid #ccc;
+  overflow-y: auto; /* Habilita el desplazamiento para listas largas */
+  padding: 20px;
+  background-image: url('content/difuminado.jpg'); /* Ajusta la ruta de la imagen */
+  background-size: cover; /* Cubre todo el espacio disponible */
+  background-position: center; /* Centra la imagen en el contenedor */
+}
+
+.chat-section {
+  flex: 1; /* Toma el espacio restante */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Previene desbordamientos de la sección de chat */
+}
+
+#chat-box {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+#chat-form {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+#welcome-message {
+  color: white; /* Color del texto */
+  font-size: 1.2em; /* Tamaño del texto */
+  padding: 10px 20px; /* Padding: Espacio interior alrededor del texto */
+  margin: 10px 0; /* Margen exterior para separación con otros elementos */
+  background-color: #333; /* Fondo oscuro para contraste (opcional) */
+  border-radius: 50px; /* Bordes redondeados (opcional) */
+}
+
+
+
+
+/* Estilo del modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Queda fijo en la pantalla */
+  z-index: 1; /* Se sitúa sobre los demás elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Agrega scroll si es necesario */
+  background-color: rgb(0,0,0); /* Color de fondo */
+  background-color: rgba(0,0,0,0.9); /* Negro con opacidad */
+  
+}
+
+/* Estilo para la imagen dentro del modal */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  
+}
+
+h3{
+  color: #fff;
+}
+
+
+
+/* Botón para cerrar el modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Añade animación al abrir el modal */
+.modal-content, .close {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+
+.login-container {
+  background-color: rgba(0, 0, 0, 0.1); /* Aumento de la opacidad para mejor visibilidad */
+  padding: 50px; /* Añade algo de espacio alrededor del formulario */
+  border-radius: 10px; /* Bordes redondeados para el contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+  max-width: 400px; /* Ancho máximo del contenedor */
+  margin: auto; /* Centra el contenedor horizontalmente */
+  display: flex; /* Asegura que los elementos hijos se alineen correctamente */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+#login-form {
+  background-color: rgba(255, 255, 255, 0.1); /* Aumento de la opacidad para mejorar la legibilidad */
+  padding: 20px; /* Espacio interior para el formulario */
+  border-radius: 5px; /* Bordes redondeados para el formulario */
+  width: 100%; /* Utiliza el ancho completo del contenedor padre */
+}
+
+
+/* Estilo general para enlaces como botones */
+a.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #a8af4c; /* Verde botón */
+  color: white; /* Texto blanco */
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none; /* Elimina el subrayado */
+  transition: background-color 0.3s, color 0.3s; /* Transición suave para hover */
+}
+
+/* Efecto hover para los enlaces */
+a.button-link:hover {
+  background-color: #a8af4c;; /* Verde más oscuro al pasar el ratón */
+  color: #fff; /* Mantiene el texto blanco */
+  text-decoration: none; /* Asegura que no se subraye al pasar el ratón */
+}
+
+.button-link1 {
+  position: absolute; /* Posicionamiento absoluto para el botón */
+  bottom: 10px; /* 10px desde el fondo */
+  left: 10px; /* 10px desde la izquierda */
+  padding: 10px 20px; /* Padding para el botón */
+  background: #007BFF; /* Color de fondo azul */
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Eliminar el subrayado del enlace */
+  border-radius: 5px; /* Bordes redondeados */
+}
+/* Añadir más estilos si es necesario */
+
+
+
+/* Estilo para el botón de crear grupo */
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px 0;
+  background-color: #007BFF;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilo para el modal */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Queda fijo en la pantalla */
+  z-index: 1; /* Se sitúa sobre los demás elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Alto completo */
+  overflow: auto; /* Agrega scroll si es necesario */
+  background-color: rgb(0,0,0); /* Color de fondo */
+  background-color: rgba(0,0,0,0.9); /* Negro con opacidad */
+}
+
+/* Estilo para la imagen dentro del modal */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Botón para cerrar el modal */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Añade animación al abrir el modal */
+.modal-content, .close {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+label{
+
+  color: white;
+}

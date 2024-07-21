@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Chat en Tiempo Real - Sala de Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="sidebar">
+      <h2>Chats disponibles</h2>
+      <button id="select-users-btn" class="button-link">Iniciar Chat</button>
+
+      <div id="welcome-message">¡Bienvenido de nuevo, [Usuario]!</div>
+      <button id="create-group-btn" class="button-link">Crear grupo</button>
+      <div id="users-list"></div>
+      <a href="login.html" class="button-link1">Regresar a inicio de sesión</a>
+    </div>
+    <div class="chat-section">
+      <div id="user-info">
+        <img id="user-profile-picture" src="" alt="Foto de perfil" class="profile-picture">
+        <span id="user-name"></span>
+      </div>
+      <div id="chat-box">
+        <div id="message-list"></div>
+      </div>
+      <form id="chat-form">
+        <input type="text" id="message-input" placeholder="Escribe tu mensaje aquí" />
+        <input type="hidden" id="usuario-destinatario" name="destinatario">
+        <span id="file-upload-icon" class="file-upload">
+          <img src="content/clip.png" alt="Adjuntar archivo" class="clip-icon">
+        </span>
+        <input type="file" id="file-input" style="display: none;">
+        <button type="submit" id="send-button">
+          <img src="content/flecha.png" alt="Enviar" class="send-icon">
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal para crear grupo -->
+  <div id="createGroupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Crear Grupo</h2>
+      <form id="create-group-form">
+        <input type="text" id="group-name" placeholder="Nombre del grupo" required>
+        <input type="file" id="foto-perfil-grupo" name="fotoPerfilGrupo" accept="image/*" required> <!-- Campo para la imagen de perfil del grupo -->
+        <div id="group-members"></div>
+        <button type="submit">Crear Grupo</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal para seleccionar usuarios -->
+  <div id="selectUsersModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Seleccionar Usuarios para Chat Privado</h2>
+      <form id="select-users-form">
+        <div id="user-selection"></div>
+        <button type="submit">Guardar Selección</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

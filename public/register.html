@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat en Tiempo Real - Registrarse</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="login-container">
+    <h2>Registrarse</h2>
+    <form id="registro-form" enctype="multipart/form-data">
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <input type="email" id="email-registro" placeholder="Correo electrónico" required>
+      <input type="password" id="contrasena-registro" placeholder="Contraseña" required>
+      <input type="file" id="foto-perfil" name="foto-perfil" accept="image/*" required> <!-- Nuevo campo para la imagen de perfil -->
+      <img id="foto-perfil-preview" src="#" alt="Vista previa de la foto de perfil" style="display: none; max-width: 200px; height: auto;"/> <!-- Elemento de imagen para la vista previa -->
+      <button type="submit">Registrarse</button>
+    </form>
+    
+    <br>
+    <a href="login.html" class="button-link">Regresar a inicio de sesión</a>
+  </div>
+
+  <script src="client.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+</body>
+</html>
