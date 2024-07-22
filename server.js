@@ -6,6 +6,7 @@ const path = require('path');
 const cors = require('cors');
 const multer = require('multer');
 const fs = require('fs');
+require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
@@ -45,10 +46,10 @@ const upload = multer({ storage });
 
 // Conexión a la base de datos
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'usuarios',
+  host: process.env.host,
+  user: process.env.user,
+  password: process.env.password,
+  database: process.env.database, 
   connectionLimit: 10,
   queueLimit: 0
 });

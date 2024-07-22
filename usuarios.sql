@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `chat` (
   `id` int(11) NOT NULL,
-  `id_usuario1` int(11) DEFAULT NULL,
+  `id_usuario1` int(11)  DEFAULT NULL,
   `id_usuario2` int(11) DEFAULT NULL,
   `id_usuario` int(11) NOT NULL,
   `contenido` text NOT NULL,
@@ -41,10 +41,6 @@ CREATE TABLE `chat` (
 --
 -- Volcado de datos para la tabla `chat`
 --
-
-INSERT INTO `chat` (`id`, `id_usuario1`, `id_usuario2`, `id_usuario`, `contenido`, `tipo`, `fecha`, `id_grupo`) VALUES
-(123, 16, 15, 16, 'nicaaaaaaaaaa', 'texto', '2024-07-21 05:22:29', NULL),
-(125, NULL, NULL, 15, 'grupo2solodiegosantallou', 'texto', '2024-07-21 06:14:54', 13);
 
 -- --------------------------------------------------------
 
@@ -62,15 +58,6 @@ CREATE TABLE `grupos` (
 -- Volcado de datos para la tabla `grupos`
 --
 
-INSERT INTO `grupos` (`id`, `nombre`, `foto_grupo`) VALUES
-(8, 'checlomecos', '/uploads/1721541408004-logogrupo.jpeg'),
-(9, 'waza', '/uploads/1721541887312-logogrupo.jpeg'),
-(10, 'gruposolodiego', '/uploads/1721541930277-logogrupo.jpeg'),
-(11, 'gruposolosantallou', '/uploads/1721542006981-logogrupo.jpeg'),
-(12, 'grupo2solosantallou', '/uploads/1721542193751-logogrupo.jpeg'),
-(13, 'grupo2solodiegosantallou', '/uploads/1721542219431-logogrupo.jpeg'),
-(14, 'grupo3solodiego', '/uploads/1721542281965-logogrupo.jpeg'),
-(15, 'grupo4solodiego', '/uploads/1721542407836-logogrupo.jpeg');
 
 -- --------------------------------------------------------
 
@@ -86,18 +73,6 @@ CREATE TABLE `grupo_miembros` (
 --
 -- Volcado de datos para la tabla `grupo_miembros`
 --
-
-INSERT INTO `grupo_miembros` (`id_grupo`, `id_usuario`) VALUES
-(8, 15),
-(9, 16),
-(9, 15),
-(10, 16),
-(11, 15),
-(12, 15),
-(13, 15),
-(13, 16),
-(14, 16),
-(15, 16);
 
 -- --------------------------------------------------------
 
@@ -117,9 +92,6 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nombre`, `email`, `contrasena`, `foto_perfil`) VALUES
-(15, 'Santallou', 'santallou@123', 'das', '/uploads/1721539305979-pato.jpg'),
-(16, 'diego', 'diego@123', 'das', '/uploads/1721539314866-perfil.png');
 
 --
 -- Índices para tablas volcadas
